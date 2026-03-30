@@ -26,9 +26,6 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
-
-    # app تبعك
-    'projects',
 ]
 
 # =========================================
@@ -54,7 +51,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'config.urls'
 
 # =========================================
-# TEMPLATES (حل المشكلة الحالية)
+# TEMPLATES
 # =========================================
 TEMPLATES = [
     {
@@ -78,7 +75,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 # =========================================
-# DATABASE (Render PostgreSQL)
+# DATABASE
 # =========================================
 DATABASES = {
     'default': dj_database_url.config(
@@ -109,7 +106,7 @@ USE_I18N = True
 USE_TZ = True
 
 # =========================================
-# STATIC FILES (Render)
+# STATIC FILES
 # =========================================
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
