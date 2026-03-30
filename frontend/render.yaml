@@ -1,0 +1,10 @@
+services:
+  - type: static
+    name: pmo-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://your-backend-url.onrender.com/api

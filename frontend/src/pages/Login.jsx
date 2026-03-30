@@ -1,0 +1,4 @@
+import React,{useState} from "react"; import { useNavigate } from "react-router-dom"; import { login } from "../services/auth";
+export default function Login(){ const nav=useNavigate(); const [username,setU]=useState(''); const [password,setP]=useState(''); const [err,setE]=useState('');
+const submit=async(e)=>{e.preventDefault(); setE(''); try{ await login(username,password); nav('/'); }catch{ setE('فشل تسجيل الدخول'); }};
+return <div className="login-wrap" dir="rtl"><form className="login-card" onSubmit={submit}><h1>تسجيل الدخول</h1><input className="input" value={username} onChange={e=>setU(e.target.value)} placeholder="اسم المستخدم" /><input className="input" type="password" value={password} onChange={e=>setP(e.target.value)} placeholder="كلمة المرور" />{err && <div style={{color:'red',marginBottom:12}}>{err}</div>}<button className="btn" type="submit">دخول</button></form></div> }
